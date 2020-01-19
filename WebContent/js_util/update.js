@@ -25,5 +25,36 @@
   					}
   				});
   	},2000);
+  	
+  	$('#switcher').change(function() {
+  		alert("uas");
+        if(this.checked) {
+        	$.ajax({
+					type : "GET",
+					url : "http://192.168.43.30/POWERMODEON",
+					dataType : "html",
+					async: true,
+					success : function(msg) {
+						console.log(msg);
+					},
+					error : function(err) {
+						console.log("error: "+err)
+					}
+				});
+        }else{
+        	$.ajax({
+				type : "GET",
+				url : "http://192.168.43.30/POWERMODEOFF",
+				dataType : "html",
+				async: true,
+				success : function(msg) {
+					console.log(msg);
+				},
+				error : function(err) {
+					console.log("error: "+err)
+				}
+			});
+        }
+    });
 
 });

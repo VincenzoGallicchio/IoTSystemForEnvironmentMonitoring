@@ -16,6 +16,68 @@
 
   <!-- Custom styles for this template-->
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  
+  <style>
+		.switch {
+		  position: relative;
+		  display: inline-block;
+		  width: 60px;
+		  height: 34px;
+		}
+		
+		.switch input { 
+		  opacity: 0;
+		  width: 0;
+		  height: 0;
+		}
+		
+		.slider {
+		  position: absolute;
+		  cursor: pointer;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: #ccc;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		}
+		
+		.slider:before {
+		  position: absolute;
+		  content: "";
+		  height: 26px;
+		  width: 26px;
+		  left: 4px;
+		  bottom: 4px;
+		  background-color: white;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		}
+		
+		input:checked + .slider {
+		  background-color: #2196F3;
+		}
+		
+		input:focus + .slider {
+		  box-shadow: 0 0 1px #2196F3;
+		}
+		
+		input:checked + .slider:before {
+		  -webkit-transform: translateX(26px);
+		  -ms-transform: translateX(26px);
+		  transform: translateX(26px);
+		}
+		
+		/* Rounded sliders */
+		.slider.round {
+		  border-radius: 34px;
+		}
+		
+		.slider.round:before {
+		  border-radius: 50%;
+		}
+  </style>
 </head>
 
 <body id="page-top">
@@ -42,6 +104,7 @@
         <a class="nav-link" href="">
           <i class="fas fa-fw fa-chart-area"></i>
           <span>Sensore 1</span></a>
+          
       </li>
 
       <!-- Divider -->
@@ -139,6 +202,24 @@
                         <div class="col-auto">
                           <div id="infrared" class="h5 mb-0 mr-3 font-weight-bold text-gray-800">Nessuna presenza</div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-xl-6 col-md-6 mb-4">
+              <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-info text-uppercase mb-1">POWER SAVING MODE</div>
+                      <div class="row no-gutters align-items-center">
+							 <label class="switch">
+							  <input type="checkbox" id="switcher">
+							  <span class="slider"></span>
+							</label>
                       </div>
                     </div>
                   </div>
